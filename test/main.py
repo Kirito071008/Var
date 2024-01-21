@@ -9,7 +9,7 @@ while True:
     x = input("Do you want to:\n1) New variable\n2) Read an existing variable\n3) Quit\t")
     if x == "1":
         new_var = input("What do you want to write?:\t")
-        with open(file_path, 'a+') as file:
+        with open(file_path, 'a+') as file: #Open for reading and appending (writing at end of file). The file is created if it does not exist.
             file.seek(0)
             lines = file.readlines()
             if lines:
@@ -23,7 +23,7 @@ while True:
             print("Var saved with number: " + str(var_check))
     elif x == "2":
             n = input("Which variable would you like to read? ('x' for all)\n")
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r') as file: #reading
                 if n.lower() == "x":
                     fl = file.read()
                     print(fl)
